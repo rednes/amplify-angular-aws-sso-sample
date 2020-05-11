@@ -1,0 +1,37 @@
+{
+    "paths": [
+        {
+            "name": "/api",
+            "lambdaFunction": "GetSigninTokenLambda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST"
+                ]
+            }
+        }
+    ],
+    "resourceName": "GetSigninTokenApi",
+    "apiName": "GetSigninTokenApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "GetSigninTokenLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyangularawssso-dev-195751-authRole",
+        "unAuthRoleName": "amplify-amplifyangularawssso-dev-195751-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "GetSigninTokenLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

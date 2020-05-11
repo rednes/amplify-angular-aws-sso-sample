@@ -6,5 +6,28 @@
 			"dependsOn": [],
 			"customAuth": false
 		}
+	},
+	"function": {
+		"GetSigninTokenLambda": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
+		}
+	},
+	"api": {
+		"GetSigninTokenApi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "GetSigninTokenLambda",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
 	}
 }
